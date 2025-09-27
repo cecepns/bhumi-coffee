@@ -107,7 +107,7 @@ const AdminDashboard = () => {
         <div className="bg-primary text-white rounded-lg p-6">
           <h2 className="text-2xl font-bold mb-2">Selamat Datang di Admin Panel</h2>
           <p className="text-green-100">
-            Kelola konten dan reservasi Nature Coffee dengan mudah melalui dashboard ini.
+            Kelola konten dan reservasi Bhumi Coffee dengan mudah melalui dashboard ini.
           </p>
         </div>
 

@@ -33,7 +33,7 @@ const AdminLayout = ({ children, title }) => {
   const navigation = [
     { name: 'Dashboard', href: '/admin/dashboard', icon: Home },
     { name: 'Menu', href: '/admin/menu', icon: UtensilsCrossed },
-    { name: 'Biji Kopi', href: '/admin/biji-kopi', icon: Coffee },
+    // { name: 'Biji Kopi', href: '/admin/biji-kopi', icon: Coffee },
     { name: 'Galeri', href: '/admin/galeri', icon: Image },
     // { name: 'Reservasi', href: '/admin/reservasi', icon: Calendar },
     { name: 'Settings', href: '/admin/settings', icon: Settings },
@@ -55,7 +55,7 @@ const AdminLayout = ({ children, title }) => {
       }`}>
         <div className="flex items-center justify-between h-16 px-6 bg-primary-dark">
           <Link to="/admin/dashboard" className="text-white font-bold text-lg">
-            Nature Coffee Admin
+            Bhumi Coffee Admin
           </Link>
           <button
             onClick={() => setSidebarOpen(false)}

@@ -1,4 +1,4 @@
--- Nature Coffee Database
+-- Bhumi Coffee Database
 -- Created: 2024
 
 DROP DATABASE IF EXISTS nature_coffee;
@@ -89,7 +89,7 @@ INSERT INTO admins (username, password, email) VALUES
 -- Insert default settings
 INSERT INTO settings (about_us, address, phone, instagram, maps_url) VALUES 
 (
-    'Nature Coffee adalah tempat yang sempurna untuk menikmati kopi berkualitas premium dalam suasana yang alami dan nyaman. Kami berkomitmen untuk menyajikan pengalaman kopi terbaik dengan biji kopi pilihan dari petani lokal terbaik.',
+    'Bhumi Coffee adalah tempat yang sempurna untuk menikmati kopi berkualitas premium dalam suasana yang alami dan nyaman. Kami berkomitmen untuk menyajikan pengalaman kopi terbaik dengan biji kopi pilihan dari petani lokal terbaik.',
     'Jl. Pemuda 2 No.84, Temindung Permai, Kec. Sungai Pinang, Kota Samarinda, Kalimantan Timur 75119, Samarinda',
     '+62 XXX-XXXX-XXXX',
     'https://www.instagram.com/naturebyorca',
@@ -129,7 +129,7 @@ INSERT INTO gallery (title, description) VALUES
 ('Barista Action', 'Barista profesional sedang beraksi'),
 ('Morning Light', 'Suasana pagi yang hangat di cafe'),
 ('Coffee Culture', 'Budaya kopi Indonesia yang kaya'),
-('Friends Gathering', 'Berkumpul bersama teman di Nature Coffee');
+('Friends Gathering', 'Berkumpul bersama teman di Bhumi Coffee');
 
 -- Indexes for better performance
 CREATE INDEX idx_menu_category ON menu(category);

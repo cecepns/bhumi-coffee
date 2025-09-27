@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { Users, Award, Heart, Clock } from 'lucide-react';
-import AboutUs from '../assets/AboutUs.jpeg';
+import AboutUs from '../assets/AboutUs.jpg';
 import apiService from '../utils/api';
 
 const AboutPage = () => {
@@ -21,7 +21,7 @@ const AboutPage = () => {
     } catch (error) {
       console.error('Error fetching about data:', error);
       // Fallback to default content if API fails
-      setAboutData('Nature Coffee lahir dari kecintaan terhadap kopi Indonesia dan keinginan untuk menciptakan ruang yang nyaman bagi para pecinta kopi. Berlokasi di jantung kota Samarinda, kami hadir dengan konsep yang menggabungkan kualitas premium dengan suasana alami.');
+      setAboutData('Bhumi Coffee lahir dari kecintaan terhadap kopi Indonesia dan keinginan untuk menciptakan ruang yang nyaman bagi para pecinta kopi. Berlokasi di jantung kota Samarinda, kami hadir dengan konsep yang menggabungkan kualitas premium dengan suasana alami.');
     } finally {
       setLoading(false);
     }
@@ -34,7 +34,7 @@ const AboutPage = () => {
       <section className="pt-44 pb-12 bg-primary text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center" data-aos="fade-up">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Tentang Nature Coffee</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">Tentang Bhumi Coffee</h1>
             <p className="text-xl text-green-100 max-w-3xl mx-auto">
               Cerita perjalanan kami dalam menghadirkan kopi berkualitas premium 
               dengan suasana yang alami dan nyaman untuk semua pecinta kopi

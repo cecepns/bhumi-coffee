@@ -43,7 +43,7 @@ const Footer = () => {
         <div className="grid md:grid-cols-3 gap-8">
           {/* Brand */}
           <div>
-            <h3 className="text-2xl font-bold mb-4">Nature Coffee</h3>
+            <h3 className="text-2xl font-bold mb-4">Bhumi Coffee</h3>
             <p className="text-green-100 mb-6">
               Nikmati kopi berkualitas premium di suasana yang nyaman dan alami.
             </p>
@@ -118,7 +118,7 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-green-700 mt-8 pt-8 text-center text-green-100">
-          <p>&copy; 2025 Nature Coffee. All rights reserved.</p>
+          <p>&copy; 2025 Bhumi Coffee. All rights reserved.</p>
         </div>
       </div>
     </footer>

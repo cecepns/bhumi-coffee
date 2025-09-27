@@ -44,7 +44,7 @@ const AdminLogin = () => {
           <div className="bg-white/10 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
             <Coffee className="text-white" size={40} />
           </div>
-          <h2 className="text-3xl font-bold text-white">Admin Nature Coffee</h2>
+          <h2 className="text-3xl font-bold text-white">Admin Bhumi Coffee</h2>
           <p className="text-green-100 mt-2">Silakan masuk untuk mengakses dashboard admin</p>
         </div>
 

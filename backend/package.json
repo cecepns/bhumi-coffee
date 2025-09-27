@@ -1,7 +1,7 @@
 {
   "name": "nature-coffee-backend",
   "version": "1.0.0",
-  "description": "Backend API for Nature Coffee website",
+  "description": "Backend API for Bhumi Coffee website",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",

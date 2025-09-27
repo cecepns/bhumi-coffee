@@ -112,10 +112,10 @@ const MenuPage = () => {
       <section className="pt-44 pb-12 bg-primary text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center" data-aos="fade-up">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Menu Nature Coffee</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">Menu Bhumi Coffee</h1>
             <p className="text-xl text-green-100 max-w-3xl mx-auto">
               Jelajahi berbagai pilihan kopi premium, makanan lezat, dan minuman segar 
-              yang tersedia di Nature Coffee
+              yang tersedia di Bhumi Coffee
             </p>
           </div>
         </div>
@@ -286,7 +286,7 @@ const MenuPage = () => {
               </h2>
               <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
                 Kunjungi langsung toko kami atau hubungi untuk pemesanan takeaway. 
-                Nikmati cita rasa kopi premium Nature Coffee
+                Nikmati cita rasa kopi premium Bhumi Coffee
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a 

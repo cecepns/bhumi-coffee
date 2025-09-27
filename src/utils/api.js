@@ -1,4 +1,4 @@
-const API_BASE_URL = 'https://api-inventory.isavralabel.com/nature-coffee/api';
+const API_BASE_URL = 'https://api-inventory.isavralabel.com/bhumi-coffee/api';
 
 class ApiService {
   // Generic API call method
