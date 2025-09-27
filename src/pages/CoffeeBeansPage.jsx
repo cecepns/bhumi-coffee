@@ -197,7 +197,7 @@ const CoffeeBeansPage = () => {
                   className="h-64 bg-cover bg-center"
                   style={{
                     backgroundImage: `url(${bean.image 
-                      ? `https://api-inventory.isavralabel.com/nature-coffee/uploads/${bean.image}`
+                      ? `https://api-inventory.isavralabel.com/bhumi-coffee/uploads/${bean.image}`
                       : sampleImages[index % sampleImages.length]
                     })`
                   }}

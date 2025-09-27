@@ -157,7 +157,7 @@ const MenuPage = () => {
                   className="h-48 bg-cover bg-center"
                   style={{
                     backgroundImage: `url(${item.image 
-                      ? `https://api-inventory.isavralabel.com/nature-coffee/uploads/${item.image}`
+                      ? `https://api-inventory.isavralabel.com/bhumi-coffee/uploads/${item.image}`
                       : sampleImages[index % sampleImages.length]
                     })`
                   }}

@@ -49,7 +49,7 @@ const GalleryPage = () => {
   const openLightbox = (item, index) => {
     setSelectedImage({
       ...item,
-      image: item.image ? `https://api-inventory.isavralabel.com/nature-coffee/uploads/${item.image}` : sampleImages[index % sampleImages.length]
+      image: item.image ? `https://api-inventory.isavralabel.com/bhumi-coffee/uploads/${item.image}` : sampleImages[index % sampleImages.length]
     });
   };
 
@@ -102,7 +102,7 @@ const GalleryPage = () => {
                     className="h-64 bg-cover bg-center group-hover:scale-110 transition-transform duration-500"
                     style={{
                       backgroundImage: `url(${item.image 
-                        ? `https://api-inventory.isavralabel.com/nature-coffee/uploads/${item.image}`
+                        ? `https://api-inventory.isavralabel.com/bhumi-coffee/uploads/${item.image}`
                         : sampleImages[index % sampleImages.length]
                       })`
                     }}

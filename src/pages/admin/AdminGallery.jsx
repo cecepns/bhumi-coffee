@@ -178,7 +178,7 @@ const AdminGallery = () => {
                       {item.image ? (
                         <img
                           className="w-full h-full object-cover"
-                          src={`https://api-inventory.isavralabel.com/nature-coffee/uploads/${item.image}`}
+                          src={`https://api-inventory.isavralabel.com/bhumi-coffee/uploads/${item.image}`}
                           alt={item.title}
                         />
                       ) : (

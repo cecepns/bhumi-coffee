@@ -227,7 +227,7 @@ const AdminCoffeeBeans = () => {
                             {bean.image ? (
                               <img
                                 className="h-12 w-12 rounded-lg object-cover"
-                                src={`https://api-inventory.isavralabel.com/nature-coffee/uploads/${bean.image}`}
+                                src={`https://api-inventory.isavralabel.com/bhumi-coffee/uploads/${bean.image}`}
                                 alt={bean.name}
                               />
                             ) : (

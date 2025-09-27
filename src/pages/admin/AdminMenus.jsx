@@ -234,7 +234,7 @@ const AdminMenus = () => {
                             {menu.image ? (
                               <img
                                 className="h-12 w-12 rounded-lg object-cover"
-                                src={`https://api-inventory.isavralabel.com/nature-coffee/uploads/${menu.image}`}
+                                src={`https://api-inventory.isavralabel.com/bhumi-coffee/uploads/${menu.image}`}
                                 alt={menu.name}
                               />
                             ) : (
