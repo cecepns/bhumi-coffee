@@ -46,6 +46,7 @@ const MenuPage = () => {
     { id: 'coffee', name: 'Kopi' },
     { id: 'non-coffee', name: 'Non-Kopi' },
     { id: 'food', name: 'Makanan' },
+    { id: 'snack', name: 'Snack' },
     { id: 'dessert', name: 'Dessert' },
   ];
 
@@ -112,10 +113,9 @@ const MenuPage = () => {
       <section className="pt-44 pb-12 bg-primary text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center" data-aos="fade-up">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Menu Bhumi Coffee</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">Menu Bhumi Samarinda</h1>
             <p className="text-xl text-green-100 max-w-3xl mx-auto">
-              Jelajahi berbagai pilihan kopi premium, makanan lezat, dan minuman segar 
-              yang tersedia di Bhumi Coffee
+              Temukan beragam pilihan kopi premium, hidangan lezat, dan minuman segar yang kami sajikan di Bhumi Samarinda
             </p>
           </div>
         </div>
@@ -277,7 +277,7 @@ const MenuPage = () => {
       </section>
 
       {/* Order Info */}
-      <section className="py-16 bg-white">
+      {/* <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-primary/5 rounded-2xl p-8" data-aos="fade-up">
             <div className="text-center">
@@ -299,7 +299,7 @@ const MenuPage = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       <Footer />
     </div>

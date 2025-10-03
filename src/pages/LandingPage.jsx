@@ -62,8 +62,8 @@ const LandingPage = () => {
         ></div>
         
         <div className="relative md:pt-24 z-10 max-w-4xl mx-auto px-4 text-center" data-aos="fade-up">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6">
-            Bhumi Coffee
+            <h1 className="text-5xl md:text-7xl font-bold mb-6">
+            Bhumi Samarinda
           </h1>
           <p className="text-xl md:text-2xl mb-8 text-green-100">
             Menyajikan Kopi Terbaik dari Bumi Indonesia dengan Cita Rasa Autentik
@@ -75,55 +75,16 @@ const LandingPage = () => {
             >
               Lihat Menu
             </Link>
-            <Link 
+            {/* <Link 
               to="/reservasi"
               className="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-primary transition-colors duration-200"
             >
               Reservasi Sekarang
-            </Link>
+            </Link> */}
           </div>
         </div>
       </section>
 
-      {/* Features Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16" data-aos="fade-up">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Mengapa Memilih Bhumi Coffee?
-            </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Menghadirkan kekayaan cita rasa kopi Indonesia dengan kualitas terbaik dan pelayanan yang hangat
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="text-center" data-aos="fade-up" data-aos-delay="100">
-              <div className="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Coffee className="text-primary" size={32} />
-              </div>
-              <h3 className="text-xl font-semibold mb-2">Kopi Asli Indonesia</h3>
-              <p className="text-gray-600">Biji kopi pilihan dari berbagai daerah di Indonesia dengan cita rasa khas nusantara</p>
-            </div>
-
-            <div className="text-center" data-aos="fade-up" data-aos-delay="200">
-              <div className="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Leaf className="text-primary" size={32} />
-              </div>
-              <h3 className="text-xl font-semibold mb-2">Suasana Tradisional</h3>
-              <p className="text-gray-600">Nikmati kopi dalam suasana yang mencerminkan kehangatan budaya Indonesia</p>
-            </div>
-
-            <div className="text-center" data-aos="fade-up" data-aos-delay="300">
-              <div className="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Users className="text-primary" size={32} />
-              </div>
-              <h3 className="text-xl font-semibold mb-2">Keramahan Nusantara</h3>
-              <p className="text-gray-600">Pelayanan dengan keramahan khas Indonesia yang membuat Anda merasa di rumah</p>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Menu Section */}
       <section className="py-20 bg-gray-50">
@@ -176,6 +137,47 @@ const LandingPage = () => {
           </div>
         </div>
       </section>
+
+      {/* Features Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16" data-aos="fade-up">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Mengapa Memilih Bhumi Coffee?
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Menghadirkan kekayaan cita rasa kopi Indonesia dengan kualitas terbaik dan pelayanan yang hangat
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="text-center" data-aos="fade-up" data-aos-delay="100">
+              <div className="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Coffee className="text-primary" size={32} />
+              </div>
+              <h3 className="text-xl font-semibold mb-2">Full Arabica</h3>
+              <p className="text-gray-600">Biji kopi arabica premium dengan cita rasa yang halus dan aroma yang khas</p>
+            </div>
+
+            <div className="text-center" data-aos="fade-up" data-aos-delay="200">
+              <div className="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Leaf className="text-primary" size={32} />
+              </div>
+              <h3 className="text-xl font-semibold mb-2">Suasana Tradisional</h3>
+              <p className="text-gray-600">Nikmati kopi dalam suasana yang mencerminkan kehangatan budaya Indonesia</p>
+            </div>
+
+            <div className="text-center" data-aos="fade-up" data-aos-delay="300">
+              <div className="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Users className="text-primary" size={32} />
+              </div>
+              <h3 className="text-xl font-semibold mb-2">Keramahan Nusantara</h3>
+              <p className="text-gray-600">Pelayanan dengan keramahan khas Indonesia yang membuat Anda merasa di rumah</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
 
       {/* Coffee Beans Section */}
       {/* <section className="py-20 bg-white">

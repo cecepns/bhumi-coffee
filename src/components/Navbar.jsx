@@ -13,7 +13,6 @@ const Navbar = () => {
     { name: 'Galeri', href: '/galeri' },
     // { name: 'Biji Kopi', href: '/biji-kopi' },
     { name: 'Menu', href: '/menu' },
-    { name: 'Reservasi', href: '/reservasi' },
   ];
 
   return (
@@ -24,8 +23,8 @@ const Navbar = () => {
             <Link to="/" className="flex items-center">
               <img 
                 src={Logo} 
-                alt="Bhumi Coffee" 
-                className="h-auto w-20"
+                alt="Bhumi Samarinda" 
+                className="h-16 w-16 rounded-full object-cover"
                 onError={(e) => {
                   e.target.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMjAiIGN5PSIyMCIgcj0iMjAiIGZpbGw9IiMyOTU4M2UiLz4KPHN2ZyB4PSI4IiB5PSI4IiB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSI+CjxwYXRoIGQ9Ik0xMiAydjIwbTgtOEg0IiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8L3N2Zz4KPC9zdmc+';
                 }}

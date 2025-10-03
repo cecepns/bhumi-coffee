@@ -6,10 +6,10 @@ import 'aos/dist/aos.css';
 // Landing Page Components
 import LandingPage from './pages/LandingPage';
 import AboutPage from './pages/AboutPage';
+import ReservationPage from './pages/ReservationPage';
 import GalleryPage from './pages/GalleryPage';
 import CoffeeBeansPage from './pages/CoffeeBeansPage';
 import MenuPage from './pages/MenuPage';
-import ReservationPage from './pages/ReservationPage';
 
 // Admin Components
 import AdminLogin from './pages/admin/AdminLogin';
@@ -40,11 +40,10 @@ function App() {
         <Routes>
           {/* Landing Page Routes */}
           <Route path="/" element={<LandingPage />} />
-          <Route path="/tentang" element={<AboutPage />} />
+          <Route path="/tentang" element={<ReservationPage />} />
           <Route path="/galeri" element={<GalleryPage />} />
           <Route path="/biji-kopi" element={<CoffeeBeansPage />} />
           <Route path="/menu" element={<MenuPage />} />
-          <Route path="/reservasi" element={<ReservationPage />} />
           
           {/* Admin Routes */}
           <Route path="/admin/login" element={<AdminLogin />} />

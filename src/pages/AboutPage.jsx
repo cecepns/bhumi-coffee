@@ -34,10 +34,9 @@ const AboutPage = () => {
       <section className="pt-44 pb-12 bg-primary text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center" data-aos="fade-up">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Tentang Bhumi Coffee</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">Tentang Bhumi Samarinda</h1>
             <p className="text-xl text-green-100 max-w-3xl mx-auto">
-              Cerita perjalanan kami dalam menghadirkan kopi berkualitas premium 
-              dengan suasana yang alami dan nyaman untuk semua pecinta kopi
+              Dedikasi Bhumi Samarinda adalah menghadirkan kopi berkualitas premium dengan suasana alami dan nyaman bagi setiap pecinta kopi
             </p>
           </div>
         </div>
@@ -80,6 +79,42 @@ const AboutPage = () => {
         </div>
       </section>
 
+      {/* Owner Profile Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div data-aos="fade-right">
+              <div 
+                className="rounded-2xl w-full h-96 bg-cover bg-no-repeat bg-center shadow-lg"
+                style={{
+                  backgroundImage: `url(https://images.pexels.com/photos/1043471/pexels-photo-1043471.jpeg)`
+                }}
+              ></div>
+            </div>
+            
+            <div data-aos="fade-left">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                Profil Owner
+              </h2>
+              <div className="space-y-4 text-gray-600 text-lg">
+                <p>
+                  Sebagai pendiri Bhumi Samarinda, passion saya terhadap kopi dimulai dari kecintaan terhadap 
+                  cita rasa autentik kopi Indonesia yang kaya akan karakter dan aroma yang unik.
+                </p>
+                <p>
+                  Dengan pengalaman bertahun-tahun dalam dunia kopi, saya berkomitmen untuk menghadirkan 
+                  pengalaman ngopi yang tak terlupakan bagi setiap pelanggan yang mengunjungi Bhumi Samarinda.
+                </p>
+                <p>
+                  Visi saya adalah menjadikan Bhumi Samarinda sebagai tempat di mana setiap pecinta kopi 
+                  dapat menikmati kualitas premium dalam suasana yang hangat dan nyaman, layaknya berada di rumah sendiri.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Values Section */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -97,10 +132,9 @@ const AboutPage = () => {
               <div className="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Award className="text-primary" size={32} />
               </div>
-              <h3 className="text-xl font-semibold mb-3 text-gray-900">Kualitas Premium</h3>
+              <h3 className="text-xl font-semibold mb-3 text-gray-900">Keunggulan Rasa</h3>
               <p className="text-gray-600">
-                Kami tidak pernah berkompromi dengan kualitas. Setiap biji kopi dipilih 
-                dengan standar tertinggi untuk memberikan rasa yang sempurna.
+                Kami tidak pernah berkompromi dengan kualitas rasa. Setiap biji kopi dipilih dengan standar terbaik, diolah secara hati-hati, dan disajikan dengan penuh ketelitian untuk menghadirkan pengalaman ngopi yang otentik.
               </p>
             </div>
 
@@ -110,8 +144,7 @@ const AboutPage = () => {
               </div>
               <h3 className="text-xl font-semibold mb-3 text-gray-900">Pelayanan Tulus</h3>
               <p className="text-gray-600">
-                Setiap pelanggan adalah keluarga bagi kami. Pelayanan ramah dan tulus 
-                adalah prioritas utama dalam setiap interaksi.
+                Kami percaya bahwa setiap pelanggan adalah bagian dari keluarga Bhumi Coffee. Karena itu, kami selalu berusaha memberikan pelayanan yang ramah, hangat, dan penuh perhatian, sehingga setiap kunjungan meninggalkan kesan mendalam.
               </p>
             </div>
 
@@ -119,10 +152,9 @@ const AboutPage = () => {
               <div className="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Users className="text-primary" size={32} />
               </div>
-              <h3 className="text-xl font-semibold mb-3 text-gray-900">Komunitas</h3>
+              <h3 className="text-xl font-semibold mb-3 text-gray-900">Keaslian & Transparansi</h3>
               <p className="text-gray-600">
-                Membangun komunitas pecinta kopi yang solid dan saling mendukung 
-                dalam mengapresiasi budaya kopi Indonesia.
+                Setiap sajian kopi yang kami berikan adalah cerminan keaslian. Mulai dari biji kopi pilihan hingga cara penyajiannya, kami menjunjung tinggi kejujuran dan keterbukaan untuk menjaga kepercayaan pelanggan.
               </p>
             </div>
 
@@ -130,10 +162,9 @@ const AboutPage = () => {
               <div className="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Clock className="text-primary" size={32} />
               </div>
-              <h3 className="text-xl font-semibold mb-3 text-gray-900">Konsistensi</h3>
+              <h3 className="text-xl font-semibold mb-3 text-gray-900">Kenyamanan Suasana</h3>
               <p className="text-gray-600">
-                Rasa yang konsisten setiap hari, pelayanan yang dapat diandalkan, 
-                dan komitmen terhadap kepuasan pelanggan.
+                Bhumi Coffee bukan hanya tentang kopi, tetapi juga ruang yang tenang, alami, dan nyaman. Kami ingin setiap pengunjung merasa betah, seolah sedang berada di ruang yang menyatu dengan alam.
               </p>
             </div>
           </div>

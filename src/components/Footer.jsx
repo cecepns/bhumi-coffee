@@ -1,9 +1,9 @@
-import { useEffect, useState } from 'react';
-import PropTypes from 'prop-types';
-import { Instagram, MapPin, Phone } from 'lucide-react';
-import apiService from '../utils/api';
+import { useEffect, useState } from "react";
+import PropTypes from "prop-types";
+import { Instagram, MapPin, Phone } from "lucide-react";
+import apiService from "../utils/api";
 
-const TikTokIcon = ({ size = 20, className = '' }) => (
+const TikTokIcon = ({ size = 20, className = "" }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={size}
@@ -34,7 +34,9 @@ const Footer = () => {
         if (mounted) setSettings(null);
       }
     })();
-    return () => { mounted = false; };
+    return () => {
+      mounted = false;
+    };
   }, []);
 
   return (
@@ -43,13 +45,13 @@ const Footer = () => {
         <div className="grid md:grid-cols-3 gap-8">
           {/* Brand */}
           <div>
-            <h3 className="text-2xl font-bold mb-4">Bhumi Coffee</h3>
+            <h3 className="text-2xl font-bold mb-4">Bhumi Samarinda</h3>
             <p className="text-green-100 mb-6">
               Nikmati kopi berkualitas premium di suasana yang nyaman dan alami.
             </p>
             <div className="flex space-x-4">
               {settings?.instagram && (
-                <a 
+                <a
                   href={settings.instagram}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -59,7 +61,7 @@ const Footer = () => {
                 </a>
               )}
               {settings?.tiktok && (
-                <a 
+                <a
                   href={settings.tiktok}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -71,39 +73,24 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Contact Info */}
-          <div>
-            <h4 className="text-lg font-semibold mb-4">Hubungi Kami</h4>
-            <div className="space-y-3 text-green-100">
-              <div className="flex items-start">
-                <MapPin size={20} className="mt-1 mr-3 flex-shrink-0" />
-                <p>{settings?.address || 'Jl. Pemuda 2 No.84, Temindung Permai, Kec. Sungai Pinang, Kota Samarinda, Kalimantan Timur 75119'}</p>
-              </div>
-              <div className="flex items-center">
-                <Phone size={20} className="mr-3" />
-                <span>{settings?.phone || '+62 XXX-XXXX-XXXX'}</span>
-              </div>
-            </div>
-          </div>
-
           {/* Operating Hours */}
           <div>
             <h4 className="text-lg font-semibold mb-4">Jam Operasional</h4>
             <div className="space-y-2 text-green-100">
               <div className="flex justify-between">
-                <span>Senin</span>
-                <span>Tutup</span>
+                <span>Sesi Pagi (Slow Bar)</span>
+                <span>05:00 - 09:00</span>
               </div>
               <div className="flex justify-between">
-                <span>Selasa - Jumat</span>
-                <span>10:00 - 23:00</span>
+                <span>Senin - Jumat</span>
+                <span>16:00 - 00:00</span>
               </div>
               <div className="flex justify-between">
                 <span>Sabtu - Minggu</span>
-                <span>10:00 - 00:00</span>
+                <span>16:00 - 01:00</span>
               </div>
             </div>
-            <div className="mt-4">
+            {/* <div className="mt-4">
               <a 
                 href={settings?.maps_url || 'https://maps.app.goo.gl/4Yy2bHsHYt3aS9C26?g_st=aw'}
                 target="_blank"
@@ -113,12 +100,30 @@ const Footer = () => {
                 <MapPin size={16} className="mr-2" />
                 Lihat di Maps
               </a>
+            </div> */}
+          </div>
+
+          {/* Contact Info */}
+          <div>
+            <h4 className="text-lg font-semibold mb-4">Hubungi Kami</h4>
+            <div className="space-y-3 text-green-100">
+              <div className="flex items-start">
+                <MapPin size={20} className="mt-1 mr-3 flex-shrink-0" />
+                <p>
+                  {settings?.address ||
+                    "Jl. Pemuda 2 No.84, Temindung Permai, Kec. Sungai Pinang, Kota Samarinda, Kalimantan Timur 75119"}
+                </p>
+              </div>
+              <div className="flex items-center">
+                <Phone size={20} className="mr-3" />
+                <span>{settings?.phone || "+62 XXX-XXXX-XXXX"}</span>
+              </div>
             </div>
           </div>
         </div>
 
         <div className="border-t border-green-700 mt-8 pt-8 text-center text-green-100">
-          <p>&copy; 2025 Bhumi Coffee. All rights reserved.</p>
+          <p>&copy; 2025 Bhumi Samarinda. All rights reserved.</p>
         </div>
       </div>
     </footer>

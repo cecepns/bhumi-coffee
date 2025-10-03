@@ -76,10 +76,9 @@ const GalleryPage = () => {
       <section className="pt-44 pb-12 bg-primary text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center" data-aos="fade-up">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Galeri Bhumi Coffee</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">Galeri Bhumi Samarinda</h1>
             <p className="text-xl text-green-100 max-w-3xl mx-auto">
-              Jelajahi momen-momen indah dan suasana nyaman di Bhumi Coffee 
-              melalui koleksi foto kami
+              Galeri foto Bhumi Coffee menghadirkan potret suasana hangat dan momen berkesan yang tercipta di setiap sudut kafe.
             </p>
           </div>
         </div>

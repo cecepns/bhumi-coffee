@@ -1,24 +1,14 @@
 import { useState, useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import { Calendar, Clock, Users, Phone, Mail, User } from 'lucide-react';
+import { MessageCircle, Phone, MapPin, Clock, Users, Award, Heart } from 'lucide-react';
 import apiService from '../utils/api';
+import AboutUs from '../assets/AboutUs.jpg';
 
 const ReservationPage = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    date: '',
-    time: '',
-    guests: '',
-    notes: ''
-  });
-  const [loading, setLoading] = useState(false);
-  const [message, setMessage] = useState({ type: '', text: '' });
   const [settings, setSettings] = useState({
     phone: '+62 XXX-XXXX-XXXX',
-    email: 'info@naturecoffee.com'
+    address: 'Jl. Pemuda 2 No.84, Temindung Permai, Kec. Sungai Pinang, Kota Samarinda, Kalimantan Timur 75119'
   });
 
   useEffect(() => {
@@ -30,94 +20,26 @@ const ReservationPage = () => {
       const response = await apiService.settings.get();
       setSettings({
         phone: response.data.phone || '+62 XXX-XXXX-XXXX',
-        email: response.data.email || 'info@naturecoffee.com'
+        address: response.data.address || 'Jl. Pemuda 2 No.84, Temindung Permai, Kec. Sungai Pinang, Kota Samarinda, Kalimantan Timur 75119'
       });
     } catch (error) {
       console.error('Error fetching settings:', error);
-      // Keep default values if API fails
     }
   };
 
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
-
-  // Function to clean phone number and create WhatsApp URL
   const createWhatsAppUrl = (phoneNumber) => {
     if (!phoneNumber) return '#';
-    
-    // Remove spaces, dashes, and other non-numeric characters except +
-    const cleanPhone = phoneNumber.replace(/[\s\-()]/g, '');
-    
-    // Create WhatsApp URL
-    return `https://wa.me/${cleanPhone}`;
+    const cleanedNumber = phoneNumber.replace(/\D/g, '');
+    const whatsappNumber = cleanedNumber.startsWith('62') ? cleanedNumber : `62${cleanedNumber}`;
+    return `https://wa.me/${whatsappNumber}`;
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setLoading(true);
-    setMessage({ type: '', text: '' });
-
-    try {
-      // Format reservation message
-      const reservationMessage = `Halo, saya ingin membuat reservasi dengan detail sebagai berikut:
-
- Nama: ${formData.name}
- Email: ${formData.email}
- Telepon: ${formData.phone}
- Tanggal: ${formData.date}
- Waktu: ${formData.time}
- Jumlah Tamu: ${formData.guests} orang
- Catatan: ${formData.notes || 'Tidak ada'}
-
-Mohon konfirmasi ketersediaan meja. Terima kasih!`;
-
-      const whatsappUrl = createWhatsAppUrl(settings.phone);
-      
-      if (whatsappUrl !== '#') {
-        const encodedMessage = encodeURIComponent(reservationMessage);
-        window.open(`${whatsappUrl}?text=${encodedMessage}`, '_blank');
-        
-        setMessage({ 
-          type: 'success', 
-          text: 'Membuka WhatsApp untuk mengirim reservasi...' 
-        });
-        
-        // Reset form after successful redirect
-        setFormData({
-          name: '',
-          email: '',
-          phone: '',
-          date: '',
-          time: '',
-          guests: '',
-          notes: ''
-        });
-      } else {
-        setMessage({ 
-          type: 'error', 
-          text: 'Nomor WhatsApp belum dikonfigurasi. Silakan hubungi admin.' 
-        });
-      }
-    } catch {
-      setMessage({ 
-        type: 'error', 
-        text: 'Terjadi kesalahan. Silakan coba lagi.' 
-      });
-    } finally {
-      setLoading(false);
+  const handleWhatsAppContact = () => {
+    const whatsappUrl = createWhatsAppUrl(settings.phone);
+    if (whatsappUrl !== '#') {
+      window.open(whatsappUrl, '_blank');
     }
   };
-
-  const timeSlots = [
-    '10:00', '10:30', '11:00', '11:30', '12:00', '12:30',
-    '13:00', '13:30', '14:00', '14:30', '15:00', '15:30',
-    '16:00', '16:30', '17:00', '17:30', '18:00', '18:30',
-    '19:00', '19:30', '20:00', '20:30', '21:00', '21:30', '22:00'
-  ];
 
   return (
     <div className="min-h-screen bg-gray-50 overflow-x-hidden">
@@ -127,217 +49,196 @@ Mohon konfirmasi ketersediaan meja. Terima kasih!`;
       <section className="pt-44 pb-12 bg-primary text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center" data-aos="fade-up">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Reservasi Meja</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">Tentang Bhumi Samarinda</h1>
             <p className="text-xl text-green-100 max-w-3xl mx-auto">
-              Pastikan meja Anda tersedia dengan melakukan reservasi terlebih dahulu. 
-              Nikmati kopi premium dalam suasana yang nyaman
+              Dedikasi Bhumi Samarinda adalah menghadirkan kopi berkualitas premium dengan suasana alami dan nyaman bagi setiap pecinta kopi
             </p>
           </div>
         </div>
       </section>
 
-      <section className="py-20">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12">
-            {/* Reservation Form */}
-            <div className="bg-white rounded-xl shadow-lg p-8" data-aos="fade-right">
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">Form Reservasi</h2>
-              
-              {message.text && (
-                <div className={`mb-6 p-4 rounded-lg ${
-                  message.type === 'success' 
-                    ? 'bg-green-50 text-green-700 border border-green-200' 
-                    : 'bg-red-50 text-red-700 border border-red-200'
-                }`}>
-                  {message.text}
-                </div>
-              )}
+      {/* Story Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div data-aos="fade-right">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                Tentang Kami
+              </h2>
+              <div className="space-y-4 text-gray-600 text-lg">
+                <p>
+                  Bhumi Samarinda lahir dari kecintaan terhadap kopi Indonesia dan keinginan untuk menciptakan ruang yang nyaman bagi para pecinta kopi. Berlokasi di jantung kota Samarinda, kami hadir dengan konsep yang menggabungkan kualitas premium dengan suasana alami.
+                </p>
+                <p>
+                  Kami percaya bahwa kopi bukan hanya sekadar minuman, tetapi juga pengalaman yang dapat menghubungkan orang-orang dari berbagai latar belakang. Setiap cangkir kopi yang kami sajikan adalah hasil dari seleksi biji kopi terbaik dan proses penyeduhan yang teliti.
+                </p>
+                <p>
+                  Dengan suasana yang hangat dan ramah, Bhumi Samarinda menjadi tempat yang sempurna untuk berkumpul dengan teman, bekerja, atau sekadar menikmati momen tenang sambil menyeruput kopi favorit Anda.
+                </p>
+              </div>
+            </div>
+            
+            <div 
+              className="rounded-2xl w-full h-96 bg-cover bg-no-repeat bg-center shadow-lg"
+              style={{
+                backgroundImage: `url(${AboutUs})`
+              }}
+              data-aos="fade-left"
+            ></div>
+          </div>
+        </div>
+      </section>
 
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div>
-                  <label className="flex items-center text-sm font-medium text-gray-700 mb-2">
-                    <User size={16} className="mr-2" />
-                    Nama Lengkap
-                  </label>
-                  <input
-                    type="text"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
-                    placeholder="Masukkan nama lengkap Anda"
-                  />
-                </div>
+      {/* Owner Profile Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div data-aos="fade-right">
+              <div 
+                className="rounded-2xl w-full h-96 bg-cover bg-no-repeat bg-center shadow-lg"
+                style={{
+                  backgroundImage: `url(https://images.pexels.com/photos/1043471/pexels-photo-1043471.jpeg)`
+                }}
+              ></div>
+            </div>
+            
+            <div data-aos="fade-left">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                Profil Owner
+              </h2>
+              <div className="space-y-4 text-gray-600 text-lg">
+                <p>
+                  Sebagai pendiri Bhumi Samarinda, passion saya terhadap kopi dimulai dari kecintaan terhadap 
+                  cita rasa autentik kopi Indonesia yang kaya akan karakter dan aroma yang unik.
+                </p>
+                <p>
+                  Dengan pengalaman bertahun-tahun dalam dunia kopi, saya berkomitmen untuk menghadirkan 
+                  pengalaman ngopi yang tak terlupakan bagi setiap pelanggan yang mengunjungi Bhumi Samarinda.
+                </p>
+                <p>
+                  Visi saya adalah menjadikan Bhumi Samarinda sebagai tempat di mana setiap pecinta kopi 
+                  dapat menikmati kualitas premium dalam suasana yang hangat dan nyaman, layaknya berada di rumah sendiri.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div>
-                    <label className="flex items-center text-sm font-medium text-gray-700 mb-2">
-                      <Mail size={16} className="mr-2" />
-                      Email
-                    </label>
-                    <input
-                      type="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
-                      placeholder="email@example.com"
-                    />
-                  </div>
+      {/* Values Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16" data-aos="fade-up">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Nilai-Nilai Kami
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Prinsip dan nilai yang menjadi fondasi dalam setiap pelayanan dan produk yang kami tawarkan
+            </p>
+          </div>
 
-                  <div>
-                    <label className="flex items-center text-sm font-medium text-gray-700 mb-2">
-                      <Phone size={16} className="mr-2" />
-                      No. Telepon
-                    </label>
-                    <input
-                      type="tel"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
-                      placeholder="08XXXXXXXXXX"
-                    />
-                  </div>
-                </div>
-
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div>
-                    <label className="flex items-center text-sm font-medium text-gray-700 mb-2">
-                      <Calendar size={16} className="mr-2" />
-                      Tanggal
-                    </label>
-                    <input
-                      type="date"
-                      name="date"
-                      value={formData.date}
-                      onChange={handleChange}
-                      required
-                      min={new Date().toISOString().split('T')[0]}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="flex items-center text-sm font-medium text-gray-700 mb-2">
-                      <Clock size={16} className="mr-2" />
-                      Waktu
-                    </label>
-                    <select
-                      name="time"
-                      value={formData.time}
-                      onChange={handleChange}
-                      required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
-                    >
-                      <option value="">Pilih waktu</option>
-                      {timeSlots.map(time => (
-                        <option key={time} value={time}>{time}</option>
-                      ))}
-                    </select>
-                  </div>
-                </div>
-
-                <div>
-                  <label className="flex items-center text-sm font-medium text-gray-700 mb-2">
-                    <Users size={16} className="mr-2" />
-                    Jumlah Tamu
-                  </label>
-                  <select
-                    name="guests"
-                    value={formData.guests}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
-                  >
-                    <option value="">Pilih jumlah tamu</option>
-                    {[...Array(10)].map((_, i) => (
-                      <option key={i + 1} value={i + 1}>
-                        {i + 1} {i === 0 ? 'orang' : 'orang'}
-                      </option>
-                    ))}
-                  </select>
-                </div>
-
-                <div>
-                  <label className="text-sm font-medium text-gray-700 mb-2 block">
-                    Catatan Khusus (Opsional)
-                  </label>
-                  <textarea
-                    name="notes"
-                    value={formData.notes}
-                    onChange={handleChange}
-                    rows="3"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
-                    placeholder="Permintaan khusus, alergi makanan, dll."
-                  ></textarea>
-                </div>
-
-                <button
-                  type="submit"
-                  disabled={loading}
-                  className="w-full bg-primary text-white py-3 px-6 rounded-lg font-semibold hover:bg-primary-dark transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
-                >
-                  {loading ? 'Membuka WhatsApp...' : 'Kirim via WhatsApp'}
-                </button>
-              </form>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="text-center" data-aos="fade-up" data-aos-delay="100">
+              <div className="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Award className="text-primary" size={32} />
+              </div>
+              <h3 className="text-xl font-semibold mb-3 text-gray-900">Keunggulan Rasa</h3>
+              <p className="text-gray-600">
+                Kami tidak pernah berkompromi dengan kualitas rasa. Setiap biji kopi dipilih dengan standar terbaik, diolah secara hati-hati, dan disajikan dengan penuh ketelitian untuk menghadirkan pengalaman ngopi yang otentik.
+              </p>
             </div>
 
-            {/* Information */}
-            <div className="space-y-6" data-aos="fade-left">
-              {/* Operating Hours */}
-              <div className="bg-white rounded-xl shadow-lg p-6">
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">Jam Operasional</h3>
-                <div className="space-y-2 text-gray-600">
-                  <div className="flex justify-between">
-                    <span>Senin</span>
-                    <span className="text-red-600 font-medium">Tutup</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span>Selasa - Jumat</span>
-                    <span className="font-medium">10:00 - 23:00</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span>Sabtu - Minggu</span>
-                    <span className="font-medium">10:00 - 00:00</span>
+            <div className="text-center" data-aos="fade-up" data-aos-delay="200">
+              <div className="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Heart className="text-primary" size={32} />
+              </div>
+              <h3 className="text-xl font-semibold mb-3 text-gray-900">Pelayanan Tulus</h3>
+              <p className="text-gray-600">
+                Kami percaya bahwa setiap pelanggan adalah bagian dari keluarga Bhumi Coffee. Karena itu, kami selalu berusaha memberikan pelayanan yang ramah, hangat, dan penuh perhatian, sehingga setiap kunjungan meninggalkan kesan mendalam.
+              </p>
+            </div>
+
+            <div className="text-center" data-aos="fade-up" data-aos-delay="300">
+              <div className="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Users className="text-primary" size={32} />
+              </div>
+              <h3 className="text-xl font-semibold mb-3 text-gray-900">Keaslian & Transparansi</h3>
+              <p className="text-gray-600">
+                Setiap sajian kopi yang kami berikan adalah cerminan keaslian. Mulai dari biji kopi pilihan hingga cara penyajiannya, kami menjunjung tinggi kejujuran dan keterbukaan untuk menjaga kepercayaan pelanggan.
+              </p>
+            </div>
+
+            <div className="text-center" data-aos="fade-up" data-aos-delay="400">
+              <div className="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Clock className="text-primary" size={32} />
+              </div>
+              <h3 className="text-xl font-semibold mb-3 text-gray-900">Kenyamanan Suasana</h3>
+              <p className="text-gray-600">
+                Bhumi Coffee bukan hanya tentang kopi, tetapi juga ruang yang tenang, alami, dan nyaman. Kami ingin setiap pengunjung merasa betah, seolah sedang berada di ruang yang menyatu dengan alam.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section className="py-20 bg-primary text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16" data-aos="fade-up">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Hubungi Kami
+            </h2>
+            <p className="text-xl text-green-100 max-w-2xl mx-auto">
+              Ingin melakukan reservasi atau memiliki pertanyaan? Hubungi kami melalui WhatsApp
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8 items-center">
+            <div className="space-y-6" data-aos="fade-right">
+              <div className="flex items-start">
+                <MapPin size={24} className="mt-1 mr-4 text-green-300 flex-shrink-0" />
+                <div>
+                  <h3 className="text-xl font-semibold mb-2">Alamat</h3>
+                  <p className="text-green-100">{settings.address}</p>
+                </div>
+              </div>
+              
+              <div className="flex items-center">
+                <Phone size={24} className="mr-4 text-green-300 flex-shrink-0" />
+                <div>
+                  <h3 className="text-xl font-semibold mb-2">Telepon</h3>
+                  <p className="text-green-100">{settings.phone}</p>
+                </div>
+              </div>
+              
+              <div className="flex items-center">
+                <Clock size={24} className="mr-4 text-green-300 flex-shrink-0" />
+                <div>
+                  <h3 className="text-xl font-semibold mb-2">Jam Operasional</h3>
+                  <div className="text-green-100 space-y-1">
+                    <p>Sesi Pagi (Slow Bar): 05:00 - 09:00</p>
+                    <p>Senin - Jumat: 16:00 - 00:00</p>
+                    <p>Sabtu - Minggu: 16:00 - 01:00</p>
                   </div>
                 </div>
               </div>
+            </div>
 
-              {/* Contact Info */}
-              <div className="bg-white rounded-xl shadow-lg p-6">
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">Informasi Kontak</h3>
-                <div className="space-y-3 text-gray-600">
-                  <div className="flex items-start">
-                    <Phone size={18} className="mt-1 mr-3 text-primary flex-shrink-0" />
-                    <div>
-                      <p className="font-medium">Telepon</p>
-                      <p>{settings.phone}</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start">
-                    <Mail size={18} className="mt-1 mr-3 text-primary flex-shrink-0" />
-                    <div>
-                      <p className="font-medium">Email</p>
-                      <p>{settings.email}</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Important Notes */}
-              <div className="bg-primary/5 rounded-xl p-6 border border-primary/10">
-                <h3 className="text-lg font-semibold text-gray-900 mb-3">Catatan Penting</h3>
-                <ul className="space-y-2 text-sm text-gray-600">
-                  <li>• Reservasi dapat dibuat minimal 1 hari sebelumnya</li>
-                  <li>• Meja akan ditahan selama 15 menit setelah waktu reservasi</li>
-                  <li>• Untuk grup lebih dari 10 orang, silakan hubungi langsung</li>
-                  <li>• Reservasi akan dikirim langsung ke WhatsApp admin</li>
-                  <li>• Konfirmasi akan diberikan melalui WhatsApp</li>
-                </ul>
+            <div className="text-center" data-aos="fade-left">
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
+                <MessageCircle size={64} className="mx-auto mb-6 text-green-300" />
+                <h3 className="text-2xl font-bold mb-4">Reservasi via WhatsApp</h3>
+                <p className="text-green-100 mb-6">
+                  Untuk melakukan reservasi atau mendapatkan informasi lebih lanjut, 
+                  silakan hubungi kami langsung melalui WhatsApp
+                </p>
+                <button
+                  onClick={handleWhatsAppContact}
+                  className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-full font-semibold transition-colors duration-200 flex items-center mx-auto"
+                >
+                  <MessageCircle size={20} className="mr-2" />
+                  Chat WhatsApp
+                </button>
               </div>
             </div>
           </div>
