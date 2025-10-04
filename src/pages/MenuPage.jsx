@@ -166,10 +166,6 @@ const MenuPage = () => {
                 <div className="p-6">
                   <div className="flex justify-between items-start mb-3">
                     <h3 className="text-xl font-semibold text-gray-900">{item.name}</h3>
-                    <div className="flex items-center">
-                      <Star className="text-yellow-400 fill-current" size={16} />
-                      <span className="ml-1 text-sm text-gray-600">5.0</span>
-                    </div>
                   </div>
                   
                   <p className="text-gray-600 mb-4 text-sm leading-relaxed line-clamp-2">
