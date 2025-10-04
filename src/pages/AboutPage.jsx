@@ -42,6 +42,42 @@ const AboutPage = () => {
         </div>
       </section>
 
+       {/* Owner Profile Section */}
+       <section className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div data-aos="fade-right">
+              <div 
+                className="rounded-2xl w-full h-96 bg-cover bg-no-repeat bg-center shadow-lg"
+                style={{
+                  backgroundImage: `url(https://images.pexels.com/photos/1043471/pexels-photo-1043471.jpeg)`
+                }}
+              ></div>
+            </div>
+            
+            <div data-aos="fade-left">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                Profil Owner
+              </h2>
+              <div className="space-y-4 text-gray-600 text-lg">
+                <p>
+                  Sebagai pendiri Bhumi Samarinda, passion saya terhadap kopi dimulai dari kecintaan terhadap 
+                  cita rasa autentik kopi Indonesia yang kaya akan karakter dan aroma yang unik.
+                </p>
+                <p>
+                  Dengan pengalaman bertahun-tahun dalam dunia kopi, saya berkomitmen untuk menghadirkan 
+                  pengalaman ngopi yang tak terlupakan bagi setiap pelanggan yang mengunjungi Bhumi Samarinda.
+                </p>
+                <p>
+                  Visi saya adalah menjadikan Bhumi Samarinda sebagai tempat di mana setiap pecinta kopi 
+                  dapat menikmati kualitas premium dalam suasana yang hangat dan nyaman, layaknya berada di rumah sendiri.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Story Section */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -75,42 +111,6 @@ const AboutPage = () => {
               }}
               data-aos="fade-left"
             ></div>
-          </div>
-        </div>
-      </section>
-
-      {/* Owner Profile Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div data-aos="fade-right">
-              <div 
-                className="rounded-2xl w-full h-96 bg-cover bg-no-repeat bg-center shadow-lg"
-                style={{
-                  backgroundImage: `url(https://images.pexels.com/photos/1043471/pexels-photo-1043471.jpeg)`
-                }}
-              ></div>
-            </div>
-            
-            <div data-aos="fade-left">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                Profil Owner
-              </h2>
-              <div className="space-y-4 text-gray-600 text-lg">
-                <p>
-                  Sebagai pendiri Bhumi Samarinda, passion saya terhadap kopi dimulai dari kecintaan terhadap 
-                  cita rasa autentik kopi Indonesia yang kaya akan karakter dan aroma yang unik.
-                </p>
-                <p>
-                  Dengan pengalaman bertahun-tahun dalam dunia kopi, saya berkomitmen untuk menghadirkan 
-                  pengalaman ngopi yang tak terlupakan bagi setiap pelanggan yang mengunjungi Bhumi Samarinda.
-                </p>
-                <p>
-                  Visi saya adalah menjadikan Bhumi Samarinda sebagai tempat di mana setiap pecinta kopi 
-                  dapat menikmati kualitas premium dalam suasana yang hangat dan nyaman, layaknya berada di rumah sendiri.
-                </p>
-              </div>
-            </div>
           </div>
         </div>
       </section>
