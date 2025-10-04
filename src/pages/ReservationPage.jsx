@@ -57,38 +57,6 @@ const ReservationPage = () => {
         </div>
       </section>
 
-      {/* Story Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div data-aos="fade-right">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                Tentang Kami
-              </h2>
-              <div className="space-y-4 text-gray-600 text-lg">
-                <p>
-                  Bhumi Samarinda lahir dari kecintaan terhadap kopi Indonesia dan keinginan untuk menciptakan ruang yang nyaman bagi para pecinta kopi. Berlokasi di jantung kota Samarinda, kami hadir dengan konsep yang menggabungkan kualitas premium dengan suasana alami.
-                </p>
-                <p>
-                  Kami percaya bahwa kopi bukan hanya sekadar minuman, tetapi juga pengalaman yang dapat menghubungkan orang-orang dari berbagai latar belakang. Setiap cangkir kopi yang kami sajikan adalah hasil dari seleksi biji kopi terbaik dan proses penyeduhan yang teliti.
-                </p>
-                <p>
-                  Dengan suasana yang hangat dan ramah, Bhumi Samarinda menjadi tempat yang sempurna untuk berkumpul dengan teman, bekerja, atau sekadar menikmati momen tenang sambil menyeruput kopi favorit Anda.
-                </p>
-              </div>
-            </div>
-            
-            <div 
-              className="rounded-2xl w-full h-96 bg-cover bg-no-repeat bg-center shadow-lg"
-              style={{
-                backgroundImage: `url(${AboutUs})`
-              }}
-              data-aos="fade-left"
-            ></div>
-          </div>
-        </div>
-      </section>
-
       {/* Owner Profile Section */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -121,6 +89,38 @@ const ReservationPage = () => {
                 </p>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Story Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div data-aos="fade-right">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                Tentang Kami
+              </h2>
+              <div className="space-y-4 text-gray-600 text-lg">
+                <p>
+                  Bhumi Samarinda lahir dari kecintaan terhadap kopi Indonesia dan keinginan untuk menciptakan ruang yang nyaman bagi para pecinta kopi. Berlokasi di jantung kota Samarinda, kami hadir dengan konsep yang menggabungkan kualitas premium dengan suasana alami.
+                </p>
+                <p>
+                  Kami percaya bahwa kopi bukan hanya sekadar minuman, tetapi juga pengalaman yang dapat menghubungkan orang-orang dari berbagai latar belakang. Setiap cangkir kopi yang kami sajikan adalah hasil dari seleksi biji kopi terbaik dan proses penyeduhan yang teliti.
+                </p>
+                <p>
+                  Dengan suasana yang hangat dan ramah, Bhumi Samarinda menjadi tempat yang sempurna untuk berkumpul dengan teman, bekerja, atau sekadar menikmati momen tenang sambil menyeruput kopi favorit Anda.
+                </p>
+              </div>
+            </div>
+            
+            <div 
+              className="rounded-2xl w-full h-96 bg-cover bg-no-repeat bg-center shadow-lg"
+              style={{
+                backgroundImage: `url(${AboutUs})`
+              }}
+              data-aos="fade-left"
+            ></div>
           </div>
         </div>
       </section>
