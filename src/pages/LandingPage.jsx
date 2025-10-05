@@ -28,14 +28,6 @@ const LandingPage = () => {
           { id: 5, name: 'Kopi Java Preanger', price: 26000, image: null, description: 'Kopi klasik Jawa Barat dengan cita rasa yang kuat' },
           { id: 6, name: 'Kopi Luwak', price: 45000, image: null, description: 'Kopi luwak premium dengan proses alami yang unik' },
         ]);
-        setCoffeeBeans([
-          { id: 1, name: 'Biji Kopi Aceh Gayo', price: 150000, image: null, description: 'Biji kopi premium dari dataran tinggi Gayo, Aceh' },
-          { id: 2, name: 'Biji Kopi Toraja', price: 180000, image: null, description: 'Biji kopi khas Toraja dengan aroma yang khas' },
-          { id: 3, name: 'Biji Kopi Kintamani', price: 140000, image: null, description: 'Biji kopi organik dari Bali dengan rasa yang lembut' },
-          { id: 4, name: 'Biji Kopi Java Preanger', price: 160000, image: null, description: 'Biji kopi klasik Jawa Barat dengan cita rasa yang kuat' },
-          { id: 5, name: 'Biji Kopi Mandailing', price: 170000, image: null, description: 'Biji kopi premium dari Sumatera Utara' },
-          { id: 6, name: 'Biji Kopi Luwak', price: 350000, image: null, description: 'Biji kopi luwak premium dengan proses alami yang unik' },
-        ]);
       }
     };
 
