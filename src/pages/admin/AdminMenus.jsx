@@ -34,10 +34,6 @@ const AdminMenus = () => {
 
   const categories = ['coffee', 'non-coffee', 'snack', 'dessert', 'makanan-berat'];
 
-  useEffect(() => {
-    fetchMenus();
-  }, [fetchMenus, searchTerm, filterCategory]);
-
   const fetchMenus = useCallback(async () => {
     try {
       setLoading(true);
@@ -73,6 +69,10 @@ const AdminMenus = () => {
       setLoading(false);
     }
   }, [pagination.currentPage, pagination.itemsPerPage]);
+
+  useEffect(() => {
+    fetchMenus();
+  }, [fetchMenus]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
