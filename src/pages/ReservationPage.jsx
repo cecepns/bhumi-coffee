@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import { MessageCircle, Phone, MapPin, Clock, Users, Award, Heart } from 'lucide-react';
+import { MessageCircle, Phone, MapPin, Clock, Users, Award, Heart, Mail } from 'lucide-react';
 import apiService from '../utils/api';
 import AboutUs from '../assets/AboutUs.jpg';
 
@@ -208,6 +208,16 @@ const ReservationPage = () => {
                 <div>
                   <h3 className="text-xl font-semibold mb-2">Telepon</h3>
                   <p className="text-green-100">{settings.phone}</p>
+                </div>
+              </div>
+              
+              <div className="flex items-center">
+                <Mail size={24} className="mr-4 text-green-300 flex-shrink-0" />
+                <div>
+                  <h3 className="text-xl font-semibold mb-2">Email</h3>
+                  <a href="mailto:bhumi_smr@icloud.com" className="text-green-100 hover:text-white transition-colors duration-200">
+                    bhumi_smr@icloud.com
+                  </a>
                 </div>
               </div>
               

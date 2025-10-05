@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Coffee, Leaf, Users, Star } from 'lucide-react';
+import { ArrowRight, Coffee, Leaf, Users } from 'lucide-react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import apiService from '../utils/api';
@@ -8,7 +8,6 @@ import Banner from '../assets/banner.jpg'
 
 const LandingPage = () => {
   const [menuItems, setMenuItems] = useState([]);
-  const [coffeeBeans, setCoffeeBeans] = useState([]);
 
   useEffect(() => {
     // Scroll to top when component mounts
@@ -16,12 +15,8 @@ const LandingPage = () => {
     
     const fetchData = async () => {
       try {
-        const [menuData, coffeeData] = await Promise.all([
-          apiService.menu.getAllPublic(6),
-          apiService.coffeeBeans.getAllPublic(6)
-        ]);
+        const menuData = await apiService.menu.getAllPublic(6);
         setMenuItems(menuData.data || []);
-        setCoffeeBeans(coffeeData.data || []);
       } catch (error) {
         console.error('Error fetching data:', error);
         // Set sample data for demo
@@ -103,25 +98,30 @@ const LandingPage = () => {
             </Link>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 gap-6">
             {menuItems.map((item, index) => (
               <div 
                 key={item.id}
-                className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-200"
+                className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-200 flex"
                 data-aos="fade-up"
                 data-aos-delay={index * 100}
               >
+                {/* Gambar di kiri */}
                 <div 
-                  className="h-64 bg-gray-200 bg-cover bg-center"
+                  className="w-40 flex-shrink-0 bg-gray-200 bg-cover bg-center"
                   style={{
                     backgroundImage: item.image 
                       ? `url(https://api-inventory.isavralabel.com/bhumi-coffee/uploads/${item.image})`
                       : 'url(https://images.pexels.com/photos/312418/pexels-photo-312418.jpeg)'
                   }}
                 ></div>
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold mb-2">{item.name}</h3>
-                  <p className="text-gray-600 mb-4 line-clamp-2">{item.description}</p>
+                
+                {/* Konten di kanan */}
+                <div className="p-6 flex flex-col justify-between flex-grow">
+                  <div>
+                    <h3 className="text-xl font-semibold mb-2">{item.name}</h3>
+                    <p className="text-gray-600 mb-4 line-clamp-2">{item.description}</p>
+                  </div>
                   <div className="flex justify-between items-center">
                     <span className="text-2xl font-bold text-primary">
                       Rp {item.price ? Math.floor(item.price).toLocaleString('id-ID').replace(/,/g, '.') : '0'}

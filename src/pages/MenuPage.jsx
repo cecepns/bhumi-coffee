@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import { Star, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 import apiService from '../utils/api';
 
 const MenuPage = () => {
@@ -26,12 +26,18 @@ const MenuPage = () => {
           { id: 4, name: 'Americano', price: 30000, image: null, description: 'Espresso dengan air panas, rasa kopi murni', category: 'coffee' },
           { id: 5, name: 'Mocha', price: 45000, image: null, description: 'Perpaduan espresso, chocolate, dan steamed milk', category: 'coffee' },
           { id: 6, name: 'Macchiato', price: 38000, image: null, description: 'Espresso dengan sedikit steamed milk', category: 'coffee' },
-          { id: 7, name: 'Croissant', price: 25000, image: null, description: 'Croissant butter yang renyah dan lembut', category: 'food' },
-          { id: 8, name: 'Sandwich Club', price: 45000, image: null, description: 'Sandwich dengan chicken, lettuce, tomato, dan mayo', category: 'food' },
-          { id: 9, name: 'Pasta Carbonara', price: 55000, image: null, description: 'Pasta dengan creamy carbonara sauce', category: 'food' },
-          { id: 10, name: 'Chocolate Cake', price: 35000, image: null, description: 'Kue coklat lembut dengan frosting krim', category: 'dessert' },
-          { id: 11, name: 'Ice Matcha Latte', price: 42000, image: null, description: 'Matcha latte dingin dengan es batu', category: 'non-coffee' },
-          { id: 12, name: 'Fresh Orange Juice', price: 25000, image: null, description: 'Jus jeruk segar tanpa gula tambahan', category: 'non-coffee' },
+          { id: 7, name: 'Ice Matcha Latte', price: 42000, image: null, description: 'Matcha latte dingin dengan es batu', category: 'non-coffee' },
+          { id: 8, name: 'Fresh Orange Juice', price: 25000, image: null, description: 'Jus jeruk segar tanpa gula tambahan', category: 'non-coffee' },
+          { id: 9, name: 'Green Tea', price: 20000, image: null, description: 'Teh hijau segar tanpa gula', category: 'non-coffee' },
+          { id: 10, name: 'French Fries', price: 25000, image: null, description: 'Kentang goreng renyah dengan bumbu special', category: 'snack' },
+          { id: 11, name: 'Nuggets', price: 35000, image: null, description: 'Chicken nuggets crispy dengan saus pilihan', category: 'snack' },
+          { id: 12, name: 'Onion Rings', price: 30000, image: null, description: 'Bawang bombay goreng tepung yang renyah', category: 'snack' },
+          { id: 13, name: 'Chocolate Cake', price: 35000, image: null, description: 'Kue coklat lembut dengan frosting krim', category: 'dessert' },
+          { id: 14, name: 'Tiramisu', price: 40000, image: null, description: 'Dessert klasik Italia dengan rasa kopi', category: 'dessert' },
+          { id: 15, name: 'Cheesecake', price: 38000, image: null, description: 'Kue keju lembut dengan topping buah segar', category: 'dessert' },
+          { id: 16, name: 'Nasi Goreng Special', price: 55000, image: null, description: 'Nasi goreng dengan daging sapi dan telur', category: 'makanan-berat' },
+          { id: 17, name: 'Mie Ayam', price: 45000, image: null, description: 'Mie ayam dengan pangsit dan bakso', category: 'makanan-berat' },
+          { id: 18, name: 'Gado-gado', price: 40000, image: null, description: 'Sayuran segar dengan bumbu kacang khas', category: 'makanan-berat' },
         ]);
       } finally {
         setLoading(false);
@@ -45,9 +51,9 @@ const MenuPage = () => {
     { id: 'all', name: 'Semua Menu' },
     { id: 'coffee', name: 'Kopi' },
     { id: 'non-coffee', name: 'Non-Kopi' },
-    { id: 'food', name: 'Makanan' },
     { id: 'snack', name: 'Snack' },
     { id: 'dessert', name: 'Dessert' },
+    { id: 'makanan-berat', name: 'Makanan Berat' },
   ];
 
   const filteredMenu = selectedCategory === 'all' 
@@ -145,7 +151,7 @@ const MenuPage = () => {
       {/* Menu Items */}
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="space-y-6">
             {currentMenuItems.map((item, index) => (
               <div 
                 key={item.id}
@@ -153,32 +159,38 @@ const MenuPage = () => {
                 data-aos="fade-up"
                 data-aos-delay={index * 100}
               >
-                <div 
-                  className="h-48 bg-cover bg-center"
-                  style={{
-                    backgroundImage: `url(${item.image 
-                      ? `https://api-inventory.isavralabel.com/bhumi-coffee/uploads/${item.image}`
-                      : sampleImages[index % sampleImages.length]
-                    })`
-                  }}
-                ></div>
-                
-                <div className="p-6">
-                  <div className="flex justify-between items-start mb-3">
-                    <h3 className="text-xl font-semibold text-gray-900">{item.name}</h3>
+                <div className="flex flex-col md:flex-row">
+                  {/* Image Section */}
+                  <div className="md:w-1/3 lg:w-1/4">
+                    <div 
+                      className="h-48 md:h-full bg-cover bg-center"
+                      style={{
+                        backgroundImage: `url(${item.image 
+                          ? `https://api-inventory.isavralabel.com/bhumi-coffee/uploads/${item.image}`
+                          : sampleImages[index % sampleImages.length]
+                        })`
+                      }}
+                    ></div>
                   </div>
                   
-                  <p className="text-gray-600 mb-4 text-sm leading-relaxed line-clamp-2">
-                    {item.description}
-                  </p>
-                  
-                  <div className="flex justify-between items-center pt-4 border-t border-gray-100">
-                    <span className="text-2xl font-bold text-primary">
-                      Rp {item.price ? Math.floor(item.price).toLocaleString('id-ID').replace(/,/g, '.') : '0'}
-                    </span>
-                    {/* <button className="bg-primary text-white px-4 py-2 rounded-lg hover:bg-primary-dark transition-colors duration-200">
-                      Pesan
-                    </button> */}
+                  {/* Content Section */}
+                  <div className="md:w-2/3 lg:w-3/4 p-6 flex flex-col justify-between">
+                    <div>
+                      <h3 className="text-xl md:text-2xl font-semibold text-gray-900 mb-3">{item.name}</h3>
+                      
+                      <p className="text-gray-600 mb-4 text-sm md:text-base leading-relaxed">
+                        {item.description}
+                      </p>
+                    </div>
+                    
+                    <div className="flex justify-between items-center pt-4 border-t border-gray-100">
+                      <span className="text-2xl md:text-3xl font-bold text-primary">
+                        Rp {item.price ? Math.floor(item.price).toLocaleString('id-ID').replace(/,/g, '.') : '0'}
+                      </span>
+                      {/* <button className="bg-primary text-white px-6 py-2 rounded-lg hover:bg-primary-dark transition-colors duration-200">
+                        Pesan
+                      </button> */}
+                    </div>
                   </div>
                 </div>
               </div>

@@ -1,14 +1,10 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import AdminLayout from '../../components/admin/AdminLayout';
 import { 
   Plus, 
   Edit, 
   Trash2, 
-  Eye, 
-  EyeOff, 
-  Upload,
   Search,
-  Filter,
   X
 } from 'lucide-react';
 import apiService from '../../utils/api';
@@ -36,13 +32,13 @@ const AdminMenus = () => {
     is_available: true
   });
 
-  const categories = ['coffee', 'non-coffee', 'food', 'dessert', 'beverage'];
+  const categories = ['coffee', 'non-coffee', 'snack', 'dessert', 'makanan-berat'];
 
   useEffect(() => {
     fetchMenus();
-  }, [pagination.currentPage, searchTerm, filterCategory]);
+  }, [fetchMenus, searchTerm, filterCategory]);
 
-  const fetchMenus = async () => {
+  const fetchMenus = useCallback(async () => {
     try {
       setLoading(true);
       const response = await apiService.menu.getAll(pagination.currentPage, pagination.itemsPerPage);
@@ -76,7 +72,7 @@ const AdminMenus = () => {
     } finally {
       setLoading(false);
     }
-  };
+  }, [pagination.currentPage, pagination.itemsPerPage]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
