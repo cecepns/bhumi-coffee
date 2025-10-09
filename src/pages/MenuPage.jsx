@@ -49,8 +49,10 @@ const MenuPage = () => {
 
   const categories = [
     { id: 'all', name: 'Semua Menu' },
-    { id: 'coffee', name: 'Kopi' },
-    { id: 'non-coffee', name: 'Non-Kopi' },
+    { id: 'filter-coffee', name: 'Filter Coffee' },
+    { id: 'coffee', name: 'Coffee' },
+    { id: 'signature', name: 'Signature' },
+    { id: 'flavour', name: 'Flavour' },
     { id: 'snack', name: 'Snack' },
     { id: 'dessert', name: 'Dessert' },
     { id: 'makanan-berat', name: 'Makanan Berat' },
@@ -121,7 +123,7 @@ const MenuPage = () => {
           <div className="text-center" data-aos="fade-up">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">Menu Bhumi Samarinda</h1>
             <p className="text-xl text-green-100 max-w-3xl mx-auto">
-              Temukan beragam pilihan kopi premium, hidangan lezat, dan minuman segar yang kami sajikan di Bhumi Samarinda
+              Hanya menyediakan kopi Full Arabica
             </p>
           </div>
         </div>
@@ -294,7 +296,7 @@ const MenuPage = () => {
               </h2>
               <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
                 Kunjungi langsung toko kami atau hubungi untuk pemesanan takeaway. 
-                Nikmati cita rasa kopi premium Bhumi Coffee
+                Nikmati cita rasa kopi premium Bhumi Samarinda
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a 

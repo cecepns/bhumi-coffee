@@ -21,7 +21,7 @@ const AboutPage = () => {
     } catch (error) {
       console.error('Error fetching about data:', error);
       // Fallback to default content if API fails
-      setAboutData('Bhumi Coffee lahir dari kecintaan terhadap kopi Indonesia dan keinginan untuk menciptakan ruang yang nyaman bagi para pecinta kopi. Berlokasi di jantung kota Samarinda, kami hadir dengan konsep yang menggabungkan kualitas premium dengan suasana alami.');
+      setAboutData('Bhumi Samarinda lahir dari kecintaan terhadap kopi Indonesia dan keinginan untuk menciptakan ruang yang nyaman bagi para pecinta kopi. Berlokasi di jantung kota Samarinda, kami hadir dengan konsep yang menggabungkan kualitas premium dengan suasana alami.');
     } finally {
       setLoading(false);
     }
@@ -36,7 +36,7 @@ const AboutPage = () => {
           <div className="text-center" data-aos="fade-up">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">Tentang Bhumi Samarinda</h1>
             <p className="text-xl text-green-100 max-w-3xl mx-auto">
-              Dedikasi Bhumi Samarinda adalah menghadirkan kopi berkualitas premium dengan suasana alami dan nyaman bagi setiap pecinta kopi
+              Memberikan suasana yang berbeda dari tempat kopi pada umumnya, dengan konsep outdoor/alam dan menyajikan kopi Full Arabica tanpa tambahan gula
             </p>
           </div>
         </div>
@@ -61,16 +61,13 @@ const AboutPage = () => {
               </h2>
               <div className="space-y-4 text-gray-600 text-lg">
                 <p>
-                  Sebagai pendiri Bhumi Samarinda, passion saya terhadap kopi dimulai dari kecintaan terhadap 
-                  cita rasa autentik kopi Indonesia yang kaya akan karakter dan aroma yang unik.
+                  Bhumi lahir dari 2 owner atau pasangan suami istri yang memiliki passion di bidang F&B. Suami bergelut di industri kopi dan istri di industri makanan.
                 </p>
                 <p>
-                  Dengan pengalaman bertahun-tahun dalam dunia kopi, saya berkomitmen untuk menghadirkan 
-                  pengalaman ngopi yang tak terlupakan bagi setiap pelanggan yang mengunjungi Bhumi Samarinda.
+                  Dengan pengalaman yang ada, mereka mendirikan tempat dimana pelanggan bisa menikmati suasana yang berbeda dengan kopi yang dibalut dengan filosofi "Ngopi" tanpa gula memberikan jati diri bagi penikmatnya.
                 </p>
                 <p>
-                  Visi saya adalah menjadikan Bhumi Samarinda sebagai tempat di mana setiap pecinta kopi 
-                  dapat menikmati kualitas premium dalam suasana yang hangat dan nyaman, layaknya berada di rumah sendiri.
+                  Di Samarinda sendiri konsep ini terbilang baru dengan visi & misi dimana pelanggan bisa menikmati atmosfer yang berbeda di tempat ini dengan minuman yang berbeda dari suasana yang berbeda dari tempat pada umumnya.
                 </p>
               </div>
             </div>
@@ -144,7 +141,7 @@ const AboutPage = () => {
               </div>
               <h3 className="text-xl font-semibold mb-3 text-gray-900">Pelayanan Tulus</h3>
               <p className="text-gray-600">
-                Kami percaya bahwa setiap pelanggan adalah bagian dari keluarga Bhumi Coffee. Karena itu, kami selalu berusaha memberikan pelayanan yang ramah, hangat, dan penuh perhatian, sehingga setiap kunjungan meninggalkan kesan mendalam.
+                Kami percaya bahwa setiap pelanggan adalah bagian dari keluarga Bhumi Samarinda. Karena itu, kami selalu berusaha memberikan pelayanan yang ramah, hangat, dan penuh perhatian, sehingga setiap kunjungan meninggalkan kesan mendalam.
               </p>
             </div>
 
@@ -164,7 +161,7 @@ const AboutPage = () => {
               </div>
               <h3 className="text-xl font-semibold mb-3 text-gray-900">Kenyamanan Suasana</h3>
               <p className="text-gray-600">
-                Bhumi Coffee bukan hanya tentang kopi, tetapi juga ruang yang tenang, alami, dan nyaman. Kami ingin setiap pengunjung merasa betah, seolah sedang berada di ruang yang menyatu dengan alam.
+                Bhumi Samarinda bukan hanya tentang kopi, tetapi juga ruang yang tenang, alami, dan nyaman. Kami ingin setiap pengunjung merasa betah, seolah sedang berada di ruang yang menyatu dengan alam.
               </p>
             </div>
           </div>

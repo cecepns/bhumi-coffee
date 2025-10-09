@@ -88,14 +88,7 @@ const GalleryPage = () => {
                       })`
                     }}
                   ></div>
-                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300 flex items-center justify-center">
-                    <div className="text-white text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4">
-                      <h3 className="text-xl font-semibold mb-2">{sectionItems[0].title}</h3>
-                      {sectionItems[0].description && (
-                        <p className="text-sm text-gray-200">{sectionItems[0].description}</p>
-                      )}
-                    </div>
-                  </div>
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300"></div>
                 </div>
               </div>
             )}
@@ -119,14 +112,7 @@ const GalleryPage = () => {
                         })`
                       }}
                     ></div>
-                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300 flex items-center justify-center">
-                      <div className="text-white text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4">
-                        <h3 className="text-lg font-semibold mb-1">{sectionItems[1].title}</h3>
-                        {sectionItems[1].description && (
-                          <p className="text-sm text-gray-200">{sectionItems[1].description}</p>
-                        )}
-                      </div>
-                    </div>
+                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300"></div>
                   </div>
                 </div>
               )}
@@ -148,14 +134,7 @@ const GalleryPage = () => {
                         })`
                       }}
                     ></div>
-                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300 flex items-center justify-center">
-                      <div className="text-white text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4">
-                        <h3 className="text-lg font-semibold mb-1">{sectionItems[2].title}</h3>
-                        {sectionItems[2].description && (
-                          <p className="text-sm text-gray-200">{sectionItems[2].description}</p>
-                        )}
-                      </div>
-                    </div>
+                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300"></div>
                   </div>
                 </div>
               )}
@@ -185,14 +164,7 @@ const GalleryPage = () => {
                         })`
                       }}
                     ></div>
-                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300 flex items-center justify-center">
-                      <div className="text-white text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4">
-                        <h3 className="text-lg font-semibold mb-1">{sectionItems[0].title}</h3>
-                        {sectionItems[0].description && (
-                          <p className="text-sm text-gray-200">{sectionItems[0].description}</p>
-                        )}
-                      </div>
-                    </div>
+                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300"></div>
                   </div>
                 </div>
               )}
@@ -214,14 +186,7 @@ const GalleryPage = () => {
                         })`
                       }}
                     ></div>
-                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300 flex items-center justify-center">
-                      <div className="text-white text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4">
-                        <h3 className="text-lg font-semibold mb-1">{sectionItems[1].title}</h3>
-                        {sectionItems[1].description && (
-                          <p className="text-sm text-gray-200">{sectionItems[1].description}</p>
-                        )}
-                      </div>
-                    </div>
+                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300"></div>
                   </div>
                 </div>
               )}
@@ -245,14 +210,7 @@ const GalleryPage = () => {
                       })`
                     }}
                   ></div>
-                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300 flex items-center justify-center">
-                    <div className="text-white text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4">
-                      <h3 className="text-xl font-semibold mb-2">{sectionItems[2].title}</h3>
-                      {sectionItems[2].description && (
-                        <p className="text-sm text-gray-200">{sectionItems[2].description}</p>
-                      )}
-                    </div>
-                  </div>
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300"></div>
                 </div>
               </div>
             )}
@@ -285,7 +243,7 @@ const GalleryPage = () => {
           <div className="text-center" data-aos="fade-up">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">Galeri Bhumi Samarinda</h1>
             <p className="text-xl text-green-100 max-w-3xl mx-auto">
-              Galeri foto Bhumi Coffee menghadirkan potret suasana hangat dan momen berkesan yang tercipta di setiap sudut kafe.
+              Galeri foto Bhumi Samarinda menghadirkan potret suasana hangat dan momen berkesan yang tercipta di setiap sudut kafe.
             </p>
           </div>
         </div>

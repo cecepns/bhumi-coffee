@@ -4,6 +4,7 @@ import Footer from '../components/Footer';
 import { MessageCircle, Phone, MapPin, Clock, Users, Award, Heart, Mail } from 'lucide-react';
 import apiService from '../utils/api';
 import AboutUs from '../assets/AboutUs.jpg';
+import ProfileOwner from '../assets/profile-owner.jpeg'
 
 const ReservationPage = () => {
   const [settings, setSettings] = useState({
@@ -51,7 +52,7 @@ const ReservationPage = () => {
           <div className="text-center" data-aos="fade-up">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">Tentang Bhumi Samarinda</h1>
             <p className="text-xl text-green-100 max-w-3xl mx-auto">
-              Dedikasi Bhumi Samarinda adalah menghadirkan kopi berkualitas premium dengan suasana alami dan nyaman bagi setiap pecinta kopi
+              Memberikan suasana yang berbeda dari tempat kopi pada umumnya, dengan konsep outdoor/alam dan menyajikan kopi Full Arabica tanpa tambahan gula
             </p>
           </div>
         </div>
@@ -62,12 +63,7 @@ const ReservationPage = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div data-aos="fade-right">
-              <div 
-                className="rounded-2xl w-full h-96 bg-cover bg-no-repeat bg-center shadow-lg"
-                style={{
-                  backgroundImage: `url(https://images.pexels.com/photos/1043471/pexels-photo-1043471.jpeg)`
-                }}
-              ></div>
+              <img src={ProfileOwner} alt="Profile Owner" className="rounded-2xl w-full h-96 object-cover" />
             </div>
             
             <div data-aos="fade-left">
@@ -76,16 +72,13 @@ const ReservationPage = () => {
               </h2>
               <div className="space-y-4 text-gray-600 text-lg">
                 <p>
-                  Sebagai pendiri Bhumi Samarinda, passion saya terhadap kopi dimulai dari kecintaan terhadap 
-                  cita rasa autentik kopi Indonesia yang kaya akan karakter dan aroma yang unik.
+                  Bhumi lahir dari 2 owner atau pasangan suami istri yang memiliki passion di bidang F&B. Suami bergelut di industri kopi dan istri di industri makanan.
                 </p>
                 <p>
-                  Dengan pengalaman bertahun-tahun dalam dunia kopi, saya berkomitmen untuk menghadirkan 
-                  pengalaman ngopi yang tak terlupakan bagi setiap pelanggan yang mengunjungi Bhumi Samarinda.
+                  Dengan pengalaman yang ada, mereka mendirikan tempat dimana pelanggan bisa menikmati suasana yang berbeda dengan kopi yang dibalut dengan filosofi "Ngopi" tanpa gula memberikan jati diri bagi penikmatnya.
                 </p>
                 <p>
-                  Visi saya adalah menjadikan Bhumi Samarinda sebagai tempat di mana setiap pecinta kopi 
-                  dapat menikmati kualitas premium dalam suasana yang hangat dan nyaman, layaknya berada di rumah sendiri.
+                  Di Samarinda sendiri konsep ini terbilang baru dengan visi & misi dimana pelanggan bisa menikmati atmosfer yang berbeda di tempat ini dengan minuman yang berbeda dari suasana yang berbeda dari tempat pada umumnya.
                 </p>
               </div>
             </div>
@@ -154,7 +147,7 @@ const ReservationPage = () => {
               </div>
               <h3 className="text-xl font-semibold mb-3 text-gray-900">Pelayanan Tulus</h3>
               <p className="text-gray-600">
-                Kami percaya bahwa setiap pelanggan adalah bagian dari keluarga Bhumi Coffee. Karena itu, kami selalu berusaha memberikan pelayanan yang ramah, hangat, dan penuh perhatian, sehingga setiap kunjungan meninggalkan kesan mendalam.
+                Kami percaya bahwa setiap pelanggan adalah bagian dari keluarga Bhumi Samarinda. Karena itu, kami selalu berusaha memberikan pelayanan yang ramah, hangat, dan penuh perhatian, sehingga setiap kunjungan meninggalkan kesan mendalam.
               </p>
             </div>
 
@@ -174,7 +167,7 @@ const ReservationPage = () => {
               </div>
               <h3 className="text-xl font-semibold mb-3 text-gray-900">Kenyamanan Suasana</h3>
               <p className="text-gray-600">
-                Bhumi Coffee bukan hanya tentang kopi, tetapi juga ruang yang tenang, alami, dan nyaman. Kami ingin setiap pengunjung merasa betah, seolah sedang berada di ruang yang menyatu dengan alam.
+                Bhumi Samarinda bukan hanya tentang kopi, tetapi juga ruang yang tenang, alami, dan nyaman. Kami ingin setiap pengunjung merasa betah, seolah sedang berada di ruang yang menyatu dengan alam.
               </p>
             </div>
           </div>

@@ -53,7 +53,7 @@ const LandingPage = () => {
             Bhumi Samarinda
           </h1>
           <p className="text-xl md:text-2xl mb-8 text-green-100">
-            Menyajikan Kopi Terbaik dari Bumi Indonesia dengan Cita Rasa Autentik
+            Filter Coffee & Espresso Based (Full Arabica)
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link 
@@ -114,11 +114,6 @@ const LandingPage = () => {
                     <h3 className="text-xl font-semibold mb-2">{item.name}</h3>
                     <p className="text-gray-600 mb-4 line-clamp-2">{item.description}</p>
                   </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-2xl font-bold text-primary">
-                      Rp {item.price ? Math.floor(item.price).toLocaleString('id-ID').replace(/,/g, '.') : '0'}
-                    </span>
-                  </div>
                 </div>
               </div>
             ))}
@@ -131,10 +126,10 @@ const LandingPage = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16" data-aos="fade-up">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Mengapa Memilih Bhumi Coffee?
+              Mengapa Memilih Bhumi Samarinda?
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Menghadirkan kekayaan cita rasa kopi Indonesia dengan kualitas terbaik dan pelayanan yang hangat
+              Menghadirkan tempat dengan suasana asri dan experience kopi yang berbeda dari coffee shop pada umumnya
             </p>
           </div>
 
