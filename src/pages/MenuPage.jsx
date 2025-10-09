@@ -186,9 +186,9 @@ const MenuPage = () => {
                     </div>
                     
                     <div className="flex justify-between items-center pt-4 border-t border-gray-100">
-                      <span className="text-2xl md:text-3xl font-bold text-primary">
+                      {/* <span className="text-2xl md:text-3xl font-bold text-primary">
                         Rp {item.price ? Math.floor(item.price).toLocaleString('id-ID').replace(/,/g, '.') : '0'}
-                      </span>
+                      </span> */}
                       {/* <button className="bg-primary text-white px-6 py-2 rounded-lg hover:bg-primary-dark transition-colors duration-200">
                         Pesan
                       </button> */}
