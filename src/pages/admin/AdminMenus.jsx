@@ -32,7 +32,15 @@ const AdminMenus = () => {
     is_available: true
   });
 
-  const categories = ['coffee', 'non-coffee', 'snack', 'dessert', 'makanan-berat'];
+  const categories = [
+    { id: 'filter-coffee', name: 'Filter Coffee' },
+    { id: 'coffee', name: 'Coffee' },
+    { id: 'signature', name: 'Signature' },
+    { id: 'flavour', name: 'Flavour' },
+    { id: 'snack', name: 'Snack' },
+    { id: 'dessert', name: 'Dessert' },
+    { id: 'makanan-berat', name: 'Makanan Berat' },
+  ];
 
   const fetchMenus = useCallback(async () => {
     try {
@@ -184,8 +192,8 @@ const AdminMenus = () => {
               >
                 <option value="">Semua Kategori</option>
                 {categories.map(category => (
-                  <option key={category} value={category}>
-                    {category.charAt(0).toUpperCase() + category.slice(1)}
+                  <option key={category.id} value={category.id}>
+                    {category.name}
                   </option>
                 ))}
               </select>
@@ -249,7 +257,7 @@ const AdminMenus = () => {
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap">
                         <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-blue-100 text-blue-800">
-                          {menu.category}
+                          {categories.find(cat => cat.id === menu.category)?.name || menu.category}
                         </span>
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
@@ -392,8 +400,8 @@ const AdminMenus = () => {
                   className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
                 >
                   {categories.map(category => (
-                    <option key={category} value={category}>
-                      {category.charAt(0).toUpperCase() + category.slice(1)}
+                    <option key={category.id} value={category.id}>
+                      {category.name}
                     </option>
                   ))}
                 </select>
